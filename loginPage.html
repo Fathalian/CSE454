@@ -1,0 +1,116 @@
+<!doctype html5>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <title>Login Page: Cross Browser</title>
+ <link rel="stylesheet" href="loginPageReset.css" type="text/css" />
+ <link rel="stylesheet" href="loginPageStyleSheet.css" type="text/css" />
+ <!--[if lt IE 9]>
+ <script src="html5.js"></script>
+ <![endif]-->
+</head>
+<body>
+ <header>
+ <hgroup>
+ <h1>Personalized Restaurant Finder</h1>
+ <h2>You are what you eat.</h2>
+ </hgroup>
+ </header>
+<nav>
+<ul>
+ <li><a href="#">Home</a></li>
+ <li><a href="#">About us</a></li>
+ <li><a href="#">Contact</a></li>
+
+ </ul>
+ </nav>
+<article>
+<header>
+<h1>Login Form</h1>
+<time datetime="2012-01-23" pubdate>January 23rd, 2012</time>
+</header>	
+<p>Please provide the authentication credentials to continue:</p>
+<section>
+
+
+
+<script type="text/javascript">
+
+  function checkForm(form)
+  {
+    if(form.username.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.username.focus();
+      return false;
+    }
+    re = /^\w+$/;
+    if(!re.test(form.username.value)) {
+      alert("Error: Username must contain only letters, numbers and underscores!");
+      form.username.focus();
+      return false;
+    }
+
+    if(form.pwd1.value != "") {
+      if(form.pwd1.value.length < 6) {
+        alert("Error: Password must contain at least six characters!");
+        form.pwd1.focus();
+        return false;
+      }
+      if(form.pwd1.value == form.username.value) {
+        alert("Error: Password must be different from Username!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[0-9]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one number (0-9)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[a-z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one lowercase letter (a-z)!");
+        form.pwd1.focus();
+        return false;
+      }
+      re = /[A-Z]/;
+      if(!re.test(form.pwd1.value)) {
+        alert("Error: password must contain at least one uppercase letter (A-Z)!");
+        form.pwd1.focus();
+        return false;
+      }
+    }
+
+    //alert("You entered a valid password: " + form.pwd1.value);
+    return true;
+  }
+
+</script>
+
+<form method="GET" action="http://revminer.com/" onSubmit="return (checkForm(this));">
+<fieldset>
+<p><label>Username</label><span><input type="text" name="username"
+required pattern="[A-Za-z0-9]{6}" 
+title="Username must contain only letters, numbers and be six character long!"></span></p>
+<p><label>Password</label><span><input type="password" name="pwd1"></span></p>
+<span><input type="submit"></span>
+<span><input type="reset" name="reset" id="reset" value="Reset"/><span>
+<span>New here!<input type="button" value="Sign Up" onClick="window.location.href='http://revminer.com/'"></span>
+</fieldset>
+</form>
+
+</section>
+</article>
+<aside>
+<header>
+ <h1>What is different about this website?</h1>
+ </header>
+ <p>We find the restaurants that you are most likely to like based on your personal pereferences.
+ Tell us once about what you like and we find the best match for your taste everytime.</p>
+
+ </aside>
+<footer>
+ Like us on FaceBook!
+ </footer>
+</body>
+</html>
