@@ -1,9 +1,8 @@
-<!doctype html>
+<!doctype html5>
 <html lang="en">
 <head>
  <meta charset="utf-8" />
- <title>Login Page: Cross Browser</title>
- <link rel="stylesheet" href="loginPageReset.css" type="text/css" />
+ <title>Login Page</title>
  <link rel="stylesheet" href="loginPageStyleSheet.css" type="text/css" />
 </head>
 <body>
@@ -77,10 +76,10 @@ return true;}
 <p><label>Username</label><span><input type="text" name="username"
 required pattern="[A-Za-z0-9]{6}" 
 title="Username must contain only letters, numbers and be six character long!"></span></p>
-<p><label>Password</label><span><input type="password" name="pwd1"></span></p>
+<p><label>Password</label><span><input type="password" name="pwd1" required></span></p>
 <span><input type="submit"></span>
 <span><input type="reset" name="reset" id="reset" value="Reset"/><span>
-<span>New here!<input type="button" value="Sign Up" onClick="window.location.href='http://revminer.com/'"></span>
+<span>New here!<input type="button" value="Sign Up" onClick="window.location.href='profilePage.html'"></span>
 </fieldset>
 </form>
 
